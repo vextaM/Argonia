@@ -1,0 +1,60 @@
+{
+  "name": "vlauncher",
+  "version": "0.0.1",
+  "description": "vLauncher Argonia launcher",
+  "main": "index.js",
+  "dependencies": {
+    "ejs-electron": "^2.0.3",
+    "electron-updater": "^4.1.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "jquery": "^3.4.1",
+    "md5-file": "^4.0.0",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "sha256": "^0.2.0",
+    "shelljs": "^0.8.3",
+    "unzipper": "^0.10.5",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "electron": "^6.0.8",
+    "electron-builder": "^21.2.0"
+  },
+  "scripts": {
+    "start": "npm install && electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "vLauncher",
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "repository": "https://github.com/Divalo/vLauncher-Argonia",
+  "keywords": [
+    "vLauncher",
+    "electron",
+    "argonia",
+    "bakhaow"
+  ],
+  "author": "Bakhaow",
+  "license": "UNLICENSED"
+}
